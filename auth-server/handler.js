@@ -53,7 +53,7 @@ module.exports.getAuthURL = async () => {
   return {
     statusCode: 200,
     headers: {
-      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Origin": "*"
     },
     body: JSON.stringify({
       authUrl: authUrl,
@@ -76,7 +76,7 @@ return new Promise((resolve, reject) => {
    *  The callback in this case is an arrow function with the results as parameters: “err” and “token.”
    */
 
-  oAuth2Client.getToken(code, (err, token, ) => {
+  oAuth2Client.getToken(code, (err, token) => {
     if (err) {
       return reject(err);
     }
@@ -86,10 +86,10 @@ return new Promise((resolve, reject) => {
   .then((token) => {
     // Respond with OAuth token 
     return {
-      headers: {
-        'Access-Control-Allow-Origin': '*'
-      },
       statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin": "*"
+      },
       body: JSON.stringify(token),
     };
   })
@@ -97,10 +97,10 @@ return new Promise((resolve, reject) => {
     // Handle error
     console.error(err);
     return {
-      headers: {
-        'Access-Control-Allow-Origin': '*'
-      },
       statusCode: 500,
+      headers: {
+        "Access-Control-Allow-Origin": "*"
+      },
       body: JSON.stringify(err),
     };
   });
