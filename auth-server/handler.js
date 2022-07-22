@@ -106,3 +106,41 @@ return new Promise((resolve, reject) => {
     };
   });
 };
+
+module.exports.getCalendarEvents = async (event) => {
+
+  const code = decodeURIComponent(`${event.pathParameters.access_token}`);
+  
+
+  return new Promise((resolve, reject) => {
+
+    
+    oAuth2Client.getEvents(code, (err, token) => {
+      if (err) {
+        return reject(err);
+      }
+      return resolve(token);
+    });
+  })
+    .then((token) => {
+      // Respond with OAuth token 
+      return {
+        statusCode: 200,
+        headers: {
+          "Access-Control-Allow-Origin": "*"
+        },
+        body: JSON.stringify(token),
+      };
+    })
+    .catch((err) => {
+      // Handle error
+      console.error(err);
+      return {
+        statusCode: 500,
+        headers: {
+          "Access-Control-Allow-Origin": "*"
+        },
+        body: JSON.stringify(err),
+      };
+    });
+  };
