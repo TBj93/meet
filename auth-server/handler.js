@@ -78,13 +78,17 @@ return new Promise((resolve, reject) => {
    */
 
   oAuth2Client.getToken(code, (err, token) => {
+   
     if (err) {
       return reject(err);
     }
+    
     return resolve(token);
   });
+  
 })
   .then((token) => {
+    
     // Respond with OAuth token 
     return {
       statusCode: 200,
@@ -109,8 +113,16 @@ return new Promise((resolve, reject) => {
 
 module.exports.getCalendarEvents = async (event) => {
 
+
+  const oAuth2Client = new google.auth.OAuth2(
+    client_id,
+    client_secret,
+    redirect_uris[0]
+  );
+
   const code = decodeURIComponent(`${event.pathParameters.access_token}`);
   
+  oAuth2Client.setCredentials({ access_token });
 
   return new Promise((resolve, reject) => {
 
