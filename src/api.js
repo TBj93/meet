@@ -16,5 +16,4 @@
     var extractDetails = events.map((event) => event.description);
     var descriptions = [...new Set(extractDetails)];
     return descriptions;
-
   }
