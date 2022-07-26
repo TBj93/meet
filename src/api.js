@@ -11,3 +11,10 @@
     var locations = [...new Set(extractLocations)];
     return locations;
   };
+
+  export const extractDetails = (events) => {
+    var extractDetails = events.map((event) => event.description);
+    var descriptions = [...new Set(extractDetails)];
+    return descriptions;
+
+  }
