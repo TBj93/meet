@@ -5,16 +5,39 @@ import { mockData } from '../mock-data';
 
 
 describe('<Event /> component', () => {
-    let  EventDetailsWrapper, event ;
+    let  EventWrapper, event ;
     beforeAll(() => {
         event = mockData[0];
-      EventDetailsWrapper = shallow(<Event event= {event} />);
+      EventWrapper = shallow(<Event event= {event} />);
     
     });
 
-    test('renders event details', () => {
-        expect(EventDetailsWrapper.find('.event-description')).toHaveLength(1);
+// tests for rendering the details themselves
+
+   test('renders event startdate', () => {
+    expect(EventWrapper.find('.event-date')).toHaveLength(1);
+  });
+    test('renders event description', () => {
+        expect(EventWrapper.find('.event-description')).toHaveLength(1);
       });
 
+    test('renders event summary', () => {
+        expect(EventWrapper.find('.event-summary')).toHaveLength(1);
+      });
+
+// tests for the button
+      test("render button", () => {
+        expect(EventWrapper.find(".showHide")).toHaveLength(1);
+      });
+
+
+      test("show additional details when the button is clicked", () => {
+        EventWrapper.setState({
+          collapsed: true,
+        });
+        EventWrapper.find(".showHide").simulate("click");
+        expect(EventWrapper.state("collapsed")).toBe(false);
+      });
+    
 
 })
