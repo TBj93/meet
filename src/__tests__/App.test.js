@@ -55,6 +55,36 @@ describe('<App /> integration', () => {
     AppWrapper.unmount();
   });
 
+
+  //Number of events test
+  test('App passes numberShown state as a prop to NumberofEvents', () => {
+    const AppWrapper = mount(<App />);
+    const AppNumberOfEventsState = AppWrapper.state('numberShown');
+    expect(AppNumberOfEventsState).not.toEqual(undefined);
+    expect(AppWrapper.find(NumberOfEvents).props().numberShown).toEqual(AppNumberOfEventsState);
+    AppWrapper.unmount();
+  });
+
+  test(' passes 32 as a default number ', () => {
+    const AppWrapper = mount(<App />);
+    const AppNumberOfEventsState = AppWrapper.state('numberShown');
+    expect(AppNumberOfEventsState).not.toEqual(undefined);
+    expect(AppWrapper.find(NumberOfEvents).props().numberShown).toEqual(32);
+    AppWrapper.unmount();
+  });
+
+  
+  test(' changes number shown when changed ', () => {
+    const AppWrapper = mount(<App />);
+    AppWrapper.find('.events-count').simulate('change', { target: { value: 12 } });
+    expect(AppWrapper.state('numberShown')).toEqual(12);
+    AppWrapper.unmount();
+  });
+
+  
+
+
+
 });
 
 describe('<App /> component', () => {

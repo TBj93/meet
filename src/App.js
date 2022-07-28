@@ -3,21 +3,32 @@ import React, { Component } from 'react';
 import './App.css';
 import EventList from './EventList'
 import CitySearch from './CitySearch';
-import Event from './Event';
+
 import { getEvents, extractLocations } from './api';
 
 import NumberOfEvents from './NumberOfEvents';
 
 class App extends Component {
 
+  state = {
+    events: [],
+    locations: [],
+numberShown:32
+  }
 
-  updateEvents = (location) => {
+
+
+  updateEvents = (location, number) => {
     getEvents().then((events) => {
+
+     const eventNumber = number;
+
       const locationEvents = (location === 'all') ?
       events :
       events.filter((event) => event.location === location);
     this.setState({
-      events: locationEvents
+      numberShown: eventNumber,
+      events: locationEvents.slice(0, number),
       });
     });
   }
@@ -35,16 +46,13 @@ class App extends Component {
     this.mounted = false;
   }
   
-  state = {
-    events: [],
-    locations: []
-  }
+
 
   render() {
     return (
       <div className="App">
         <p>Number of events</p>
-<NumberOfEvents/>  
+<NumberOfEvents  numberShown={this.state.numberShown} updateEvents={this.updateEvents}/>  
 <br></br>
 <CitySearch locations={this.state.locations} updateEvents={this.updateEvents}/>
       <EventList events={this.state.events} />
