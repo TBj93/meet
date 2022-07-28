@@ -61,7 +61,7 @@ export const getAccessToken = async () => {
   
     if (token) {
       removeQuery();
-      const url = 'https://o1kg4v3sle.execute-api.eu-central-1.amazonaws.com/dev/api/get-events/{access_token}' + '/' + token;
+      const url = 'https://o1kg4v3sle.execute-api.eu-central-1.amazonaws.com/dev/api/get-events' + '/' + token;
       const result = await axios.get(url);
       if (result.data) {
         var locations = extractLocations(result.data.events);
@@ -90,7 +90,7 @@ export const getAccessToken = async () => {
   const getToken = async (code) => {
     const encodeCode = encodeURIComponent(code);
     const { access_token } = await fetch(
-      'https://o1kg4v3sle.execute-api.eu-central-1.amazonaws.com/dev/api/get-events/{access_token}' + '/' + encodeCode
+      'https://o1kg4v3sle.execute-api.eu-central-1.amazonaws.com/dev/api/token' + '/' + encodeCode
     )
       .then((res) => {
         return res.json();
