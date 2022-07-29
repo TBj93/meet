@@ -4,7 +4,7 @@ class NumberOfEvents extends Component {
 
 //default number 32 being shown
     state = {
-            numberShown: 32,
+            numberShown: 16,
         }
    
    // show specific number
@@ -18,7 +18,7 @@ class NumberOfEvents extends Component {
                 numberShown: value
            
             });
-            this.props.updateEvents(value);
+            this.props.updateEvents(undefined, value);
     }
   
         render() {
