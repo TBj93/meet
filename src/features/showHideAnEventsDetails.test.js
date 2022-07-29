@@ -11,7 +11,7 @@ const feature = loadFeature('./src/features/showHideAnEventsDetails.feature');
 defineFeature(feature, test => {
 
     test('An event element is collapsed by default.', ({ given, when, then }) => {
-        given('user hasnt searched for any city', () => {
+        given('user hasn’t searched for any city', () => {
 
         });
 
