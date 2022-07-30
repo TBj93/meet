@@ -17,7 +17,7 @@ describe('<NumberOfEvents /> component', () => {
     test('display 32 s default number', () => {
         expect(
           NumberOfEventsWrapper.find('.events-count').get(0).props.value
-        ).toEqual(32);
+        ).toEqual(16);
       });
 
 }
