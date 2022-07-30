@@ -14,7 +14,7 @@ class App extends Component {
     events: [],
     locations: [],
     savedLocation: 'all',
-    numberShown:16
+    numberShown:32
   }
 
 
@@ -68,7 +68,7 @@ class App extends Component {
 <CitySearch locations={this.state.locations} updateEvents={this.updateEvents}/>
 <p>Number of events</p>
 <br></br>
-<NumberOfEvents updateEvents={this.updateEvents}/>  
+<NumberOfEvents updateEvents={this.updateEvents} numberShown={this.state.numberShown} />  
       <EventList events={this.state.events} />
     </div>
     );

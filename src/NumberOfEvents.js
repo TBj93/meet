@@ -4,7 +4,7 @@ class NumberOfEvents extends Component {
 
 //default number 32 being shown
     state = {
-            numberShown: 16,
+            numberShown: 32,
         }
    
    // show specific number
