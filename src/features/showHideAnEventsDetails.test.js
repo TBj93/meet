@@ -9,50 +9,48 @@ const feature = loadFeature('./src/features/showHideAnEventsDetails.feature');
 
 
 defineFeature(feature, test => {
-
     test('An event element is collapsed by default.', ({ given, when, then }) => {
-        given('user hasn’t searched for any city', () => {
+        given('a user does not actively select an element on the main page', () => {
 
         });
 
-        when('the user opens the app', () => {
+        when('an event element is being displayed', () => {
 
         });
 
-        then('all resulting elements should be collapsed by default', () => {
+        then('the element is being displayed collapsed', () => {
 
         });
     });
+
 
     test('User can expand an event to see its details.', ({ given, when, then }) => {
-        given('the user has started a search', () => {
+        given('a user selects an event to see its details', () => {
 
         });
 
-        when('the user clicks on the \'show details\' button', () => {
+        when('the user expands the event', () => {
 
         });
 
-        then('the user should see the details', () => {
-
-        });
-    });
-
-
-test('User can collapse an event to hide its details.', ({ given, when, then }) => {
-        given('the user has opened an events\' details', () => {
-
-        });
-
-        when('the user clicks the \'hide details\' button', () => {
-
-        });
-
-        then('events\' details should collapse', () => {
+        then('the user should see its details', () => {
 
         });
     });
 
+    test('User can collapse an event to hide its details.', ({ given, when, then }) => {
+        given('a user selects an event to hide its details', () => {
 
+        });
+
+        when('the user collapses the event', () => {
+
+        });
+
+        then('the user shouldn\'t see its details anymore', () => {
+
+        });
+    });
+   
 
 });
