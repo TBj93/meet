@@ -20,7 +20,7 @@ defineFeature(feature, test => {
         });
 
         then('the element is being displayed collapsed', () => {
-            expect(AppWrapper.find('details')).toHaveLength(0);
+            expect(AppWrapper.find('.details')).toHaveLength(0);
         });
     });
 
@@ -34,11 +34,11 @@ defineFeature(feature, test => {
 
         when('the user expands the event', () => {
             AppWrapper.update();
-            AppWrapper.find('showHide').at(0).simulate('click');
+            AppWrapper.find('.showHide').at(0).simulate('click');
         });
 
         then('the user should see its details', () => {
-            expect(AppWrapper.find('details')).toHaveLength(1);
+            expect(AppWrapper.find('.details')).toHaveLength(1);
         });
     });
 
@@ -47,17 +47,17 @@ defineFeature(feature, test => {
         given('a user selects an event to hide its details', async () => {
             AppWrapper = await mount(<App />);
             AppWrapper.update();
-            AppWrapper.find('showHide').at(0).simulate('click');
+            AppWrapper.find('.showHide').at(0).simulate('click');
         
         });
 
         when('the user collapses the event', () => {
            
-            AppWrapper.find('showHide').at(0).simulate('click');
+            AppWrapper.find('.showHide').at(0).simulate('click');
         });
 
         then('the user shouldn\'t see its details anymore', () => {
-            expect(AppWrapper.find('details')).toHaveLength(0);
+            expect(AppWrapper.find('.details')).toHaveLength(0);
         });
     });
    
