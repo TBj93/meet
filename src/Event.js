@@ -27,8 +27,8 @@ class Event extends Component {
     <div className = "event">
 
    <p className="event-date"> {event.start.dateTime}</p>
+   <p className="event-summary"> {event.summary}</p>
 
-<p className="event-description">{event.description}</p>
 <button className="showHide" 
  onClick={this.handleClick}
 
@@ -41,9 +41,10 @@ class Event extends Component {
       
  
          {!collapsed && (
+         
           <div className="details">
             <h3>More details</h3>
-            <p className="event-summary"> {event.summary}</p>
+            <p className="event-description">{event.description}</p>
           </div>
         )}
 
