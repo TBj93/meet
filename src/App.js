@@ -10,6 +10,9 @@ import NumberOfEvents from './NumberOfEvents';
 
 class App extends Component {
 
+
+
+  
   state = {
     events: [],
     locations: [],
@@ -51,14 +54,18 @@ class App extends Component {
       if (this.mounted) {
         this.setState({ events, locations: extractLocations(events) });
       }
+      console.log(navigator.onLine);
+      if (!navigator.onLine) {
+        this.setState({ warningText: 'offline'});
+      }
     });
   }
 
   componentWillUnmount(){
     this.mounted = false;
-    if (!this.mounted) {
+   /* if (!this.mounted) {
       this.setState({ warningText: 'offline'});
-    }
+    }  */
   }
   
 
