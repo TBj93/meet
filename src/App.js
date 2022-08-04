@@ -63,9 +63,9 @@ class App extends Component {
 
   componentWillUnmount(){
     this.mounted = false;
-   /* if (!this.mounted) {
+   if (!this.mounted) {
       this.setState({ warningText: 'offline'});
-    }  */
+    }  
   }
   
 
