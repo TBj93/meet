@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import EventList from './EventList'
 import CitySearch from './CitySearch';
-
+import { WarningAlert } from './Alert';
 import { getEvents, extractLocations } from './api';
 
 import NumberOfEvents from './NumberOfEvents';
@@ -14,7 +14,8 @@ class App extends Component {
     events: [],
     locations: [],
     savedLocation: 'all',
-    numberShown:32
+    numberShown:32,
+    warningText:''
   }
 
 
@@ -55,6 +56,9 @@ class App extends Component {
 
   componentWillUnmount(){
     this.mounted = false;
+    if (!this.mounted) {
+      this.setState({ warningText: 'offline'});
+    }
   }
   
 
@@ -65,6 +69,7 @@ class App extends Component {
       
  
 <br></br>
+<WarningAlert text={this.state.warningText} />
 <CitySearch locations={this.state.locations} updateEvents={this.updateEvents}/>
 <p>Number of events</p>
 <br></br>
