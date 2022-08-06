@@ -25,9 +25,11 @@ class Event extends Component {
         
     
     <div className = "event">
-
-   <p className="event-date"> {event.start.dateTime}</p>
+      
    <p className="event-summary"> {event.summary}</p>
+   <p className="event-location"> {event.location}</p>
+   <p className="event-date"> {event.start.dateTime}</p>
+ 
 
 <button className="showHide" 
  onClick={this.handleClick}
