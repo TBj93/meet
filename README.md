@@ -5,6 +5,9 @@ This app is a serverless, progressive web application (PWA) with React using a t
 development (TDD) technique. The application uses the Google Calendar API to fetch
 upcoming events.
 
+
+
+
 ## User Stories
 
 ### FEATURE 2: SHOW/HIDE AN EVENT'S DETAILS
