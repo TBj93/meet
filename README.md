@@ -6,7 +6,7 @@ development (TDD) technique. The application uses the Google Calendar API to fet
 upcoming events.
 
 ![alt text](https://github.com/TBj93/meet/blob/main/meet%20app%20imgs/meet%20app%20screen2.PNG?raw=true)
-![alt text](https://github.com/TBj93/meet/blob/main/meet%20app%20imgs/meet%20app%20screen.PNG?raw=true)
+![alt text](https://github.com/TBj93/meet/blob/main/meet%20app%20imgs/meet%20app%20screen%204.PNG?raw=true)
 
 
 ## User Stories
@@ -43,7 +43,7 @@ When the user collapses the event
 
 Then the user shouldn't see its details anymore
 
-![alt text](https://github.com/TBj93/meet/blob/main/meet%20app%20imgs/meet%20app%20screen4.PNG?raw=true)
+![alt text](https://github.com/TBj93/meet/blob/main/meet%20app%20imgs/meet-app-screen.PNG?raw=true)
 
 ### FEATURE 3: SPECIFY NUMBER OF EVENTS
 
@@ -101,4 +101,4 @@ When tthe user requests the data
 
 Then data is being visualized in a chart for the user
 
-![alt text](https://github.com/TBj93/meet/blob/main/meet%20app%20imgs/meet%20app%20screen1.PNG?raw=true)
+![alt text](https://github.com/TBj93/meet/blob/main/meet%20app%20imgs/meet-app-screen1.PNG?raw=true)
