@@ -18,7 +18,7 @@ getData = () => {
 
     const data = genres.map((genre)=>{
 
-     const   value =  events.filter((events)=> events.summary.includes(genre) ).length
+     const   value =  events.filter((events)=> events.summary.split(" ").includes(genre) ).length
 
         return { name: genre, value };
     })
