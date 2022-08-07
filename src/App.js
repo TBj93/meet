@@ -12,6 +12,7 @@ import {
    ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from 'recharts';
 
+
 import NumberOfEvents from './NumberOfEvents';
 
 class App extends Component {
@@ -109,10 +110,11 @@ class App extends Component {
     
 
     return (
-      <div className="App">
+      <div className="App bg">
       
  
 <br></br>
+
 <WarningAlert text={this.state.warningText} />
 
 
@@ -123,10 +125,13 @@ class App extends Component {
 <h4>Events in each city</h4>
 <div className="data-vis-wrapper">
   
-
+    <p> Tech Profile:</p>
       <EventGenre events={this.state.events} />
        
 <ResponsiveContainer height={400}>
+
+<p> Events per City</p>
+
 <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
   <CartesianGrid strokeDasharray="3 3" />
   <XAxis type="category" dataKey="city" name="city" />
