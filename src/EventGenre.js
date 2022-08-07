@@ -1,9 +1,15 @@
 import React, { PureComponent } from 'react';
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
 
+import React, {useEffect, useState} from 'react';
+
+
 const EventGenre = ({events}) => {
 
-  
+
+
+    useEffect(() => { setData(() => getData()); }, [events]);
+    const [data, setData] = useState([]);
 
 getData = () => {
    
@@ -12,7 +18,7 @@ getData = () => {
 
     const data = genres.map((genre)=>{
 
-        value = filter((summary)=> summary.includes(genre) ).length
+     const   value =  events.filter((events)=> events.summary.includes(genre) ).length
 
         return { name: genre, value };
     })
@@ -22,7 +28,7 @@ getData = () => {
 };
 
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+
 
 
 
