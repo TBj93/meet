@@ -19,7 +19,7 @@ const EventGenre = ({ events }) => {
 
     useEffect(() => {  setData(getData());
   }, [events]);
-
+  
  
   return (
     <ResponsiveContainer height={400}>
@@ -33,7 +33,9 @@ const EventGenre = ({ events }) => {
           cy={200}
           outerRadius={80}
           fill="#8884d8"
-          label
+          label={({ name, percent }) =>
+          `${name} ${(percent * 100).toFixed(0)}%`
+        }
         />
    
       </PieChart>
