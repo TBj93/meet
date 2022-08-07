@@ -5,7 +5,8 @@ This app is a serverless, progressive web application (PWA) with React using a t
 development (TDD) technique. The application uses the Google Calendar API to fetch
 upcoming events.
 
-
+![alt text](https://github.com/TBj93/meet/blob/main/meet%20app%20imgs/meet%20app%20screen2.PNG?raw=true)
+![alt text](https://github.com/TBj93/meet/blob/main/meet%20app%20imgs/meet%20app%20screen.PNG?raw=true)
 
 
 ## User Stories
@@ -41,6 +42,8 @@ Given a user selects an event to hide its details
 When the user collapses the event
 
 Then the user shouldn't see its details anymore
+
+![alt text](https://github.com/TBj93/meet/blob/main/meet%20app%20imgs/meet%20app%20screen4.PNG?raw=true)
 
 ### FEATURE 3: SPECIFY NUMBER OF EVENTS
 
@@ -97,3 +100,5 @@ Given the users wants to see a number of upcoming events in each city
 When tthe user requests the data
 
 Then data is being visualized in a chart for the user
+
+![alt text](https://github.com/TBj93/meet/blob/main/meet%20app%20imgs/meet%20app%20screen1.PNG?raw=true)
