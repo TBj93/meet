@@ -11,7 +11,7 @@ const EventGenre = ({events}) => {
     useEffect(() => { setData(() => getData()); }, [events]);
     const [data, setData] = useState([]);
 
-getData = () => {
+  const getData = () => {
    
 
     const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'AngularJS'];
