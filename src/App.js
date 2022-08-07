@@ -116,21 +116,17 @@ class App extends Component {
 <br></br>
 
 <WarningAlert text={this.state.warningText} />
-
+<h1>The Meet App </h1>
 
 <CitySearch locations={this.state.locations} updateEvents={this.updateEvents}/>
-<p>Number of events</p>
+<p>Choose a city</p>
 <br></br>
 <NumberOfEvents updateEvents={this.updateEvents} numberShown={this.state.numberShown} />  
-<h4>Events in each city</h4>
+<p>Number of events you want to see</p>
 <div className="data-vis-wrapper">
   
-    <p> Tech Profile:</p>
-      <EventGenre events={this.state.events} />
-       
+   
 <ResponsiveContainer height={400}>
-
-<p> Events per City</p>
 
 <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
   <CartesianGrid strokeDasharray="3 3" />
@@ -142,7 +138,11 @@ class App extends Component {
   <Scatter data={this.getData()} fill="#8884d8" />
   </ScatterChart>
 </ResponsiveContainer>
+
+<EventGenre events={this.state.events} />
+
 </div>
+
       <EventList events={this.state.events} />
       <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
 getAccessToken={() => { getAccessToken() }} /> 
