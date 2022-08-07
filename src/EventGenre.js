@@ -12,9 +12,9 @@ getData = () => {
 
     const data = genres.map((genre)=>{
 
-        value = filter({summary}=> summary.includes(genre) ).length
+        value = filter((summary)=> summary.includes(genre) ).length
 
-
+        return { name: genre, value };
     })
 
 
@@ -30,7 +30,7 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
       <ResponsiveContainer width="100%" height="100%">
         <PieChart width={400} height={400}>
           <Pie
-            data={data}
+            data={this.getData()}
             cx="50%"
             cy="50%"
             labelLine={false}
