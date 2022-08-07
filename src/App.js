@@ -1,14 +1,15 @@
 import './nprogress.css';
 import React, { Component } from 'react';
 import './App.css';
-import EventList from './EventList'
+import EventList from './EventList';
+import EventGenre from './EventGenre';
 import CitySearch from './CitySearch';
 import { WarningAlert } from './Alert';
 import WelcomeScreen from './WelcomeScreen';
 import { getEvents, extractLocations, checkToken, getAccessToken } from
 './api';
 import {
-  ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
+   ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from 'recharts';
 
 import NumberOfEvents from './NumberOfEvents';
@@ -120,6 +121,7 @@ class App extends Component {
 <br></br>
 <NumberOfEvents updateEvents={this.updateEvents} numberShown={this.state.numberShown} />  
 <h4>Events in each city</h4>
+<div className="data-vis-wrapper">
 <ResponsiveContainer height={400}>
 <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
   <CartesianGrid strokeDasharray="3 3" />
@@ -133,6 +135,7 @@ class App extends Component {
 </ResponsiveContainer>
 
       <EventList events={this.state.events} />
+      </div>
       <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
 getAccessToken={() => { getAccessToken() }} /> 
     </div>
