@@ -24,6 +24,11 @@
         margin: 1rem;
         }
 
+        .login-button:hover {
+          box-shadow: 0 0 6px #4285f4;
+          cursor:grab;
+        } 
+
 
     .google-btn {
         width: 184px;
@@ -36,10 +41,12 @@
         
         .google-btn:hover {
         box-shadow: 0 0 6px #4285f4;
+        cursor:grab;
         }
         
         .google-btn:active {
           background: #1669f2;
+          cursor:grab;
         }
         
         .google-icon-wrapper {
@@ -71,5 +78,6 @@
         height: 100%;
         text-align: center;
         }
-        
-    
+        .btn-text:hover {
+          cursor:grab;
+        }

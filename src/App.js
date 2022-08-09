@@ -1,7 +1,7 @@
 import './nprogress.css';
 import React, { Component } from 'react';
 import './App.css';
-import EventList from './EventList';
+import EventList from './Eventlist';
 import EventGenre from './EventGenre';
 import CitySearch from './CitySearch';
 import { WarningAlert } from './Alert';
@@ -81,9 +81,7 @@ class App extends Component {
     this.setState({ events, locations: extractLocations(events) });
     }
     console.log(navigator.onLine);
-    if (!navigator.onLine) {
-      this.setState({ warningText: 'offline'});
-    }
+    
     });
     }
     }
@@ -115,7 +113,7 @@ class App extends Component {
  
 <br></br>
 
-<WarningAlert text={this.state.warningText} />
+
 <h1>The Meet App </h1>
 
 <CitySearch locations={this.state.locations} updateEvents={this.updateEvents}/>
@@ -144,8 +142,8 @@ class App extends Component {
 </div>
 
       <EventList events={this.state.events} />
-      <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
-getAccessToken={() => { getAccessToken() }} /> 
+      {!navigator.onLine && <WarningAlert warningText={'You are currently offline, the events displayed may not be up to date.'} />}
+        <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} />
     </div>
     );
   }
