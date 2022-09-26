@@ -5,6 +5,19 @@ This app is a serverless, progressive web application (PWA) with React using a t
 development (TDD) technique. The application uses the Google Calendar API to fetch
 upcoming events.
 
+## Technology used
+
+Html, Css, Js/React, AWS Lambda, Google Verification, google calendar API, Atatus (Devops perofrmance control), service worker(for offline functionality)
+
+## Technical Requirements
+
+Latest browser update, Javascript installed and the PWA is downloadable an usable
+
+## Install for development
+
+-install latest React, node, nvm versions
+-create PWA via lighthouse
+
 ![alt text](https://github.com/TBj93/meet/blob/main/meet%20app%20imgs/meet%20app%20screen2.PNG?raw=true)
 ![alt text](https://github.com/TBj93/meet/blob/main/meet%20app%20imgs/meet%20app%20screen%204.PNG?raw=true)
 
